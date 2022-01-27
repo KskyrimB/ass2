@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const conn_str = "mongodb+srv://root:root@esd2.nfa4r.mongodb.net/ESD-2?retryWrites=true&w=majority"
+const conn_str = "mongodb+srv://root:root@krutish.kusg0.mongodb.net/ESD-2?retryWrites=true&w=majority"
 
 mongoose.connect(conn_str, { useNewUrlParser: true , useUnifiedTopology: true})
     .then( () => console.log("Connected successfully...") )
