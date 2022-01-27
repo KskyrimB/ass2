@@ -6,15 +6,18 @@ mongoose.connect(conn_str, { useNewUrlParser: true , useUnifiedTopology: true})
     .catch( (err) => console.log(err) );
 
 const orderSchema = new mongoose.Schema({
-  "flatNo": String,
+  "rollNumber": String,
   "firstName": String,
   "lastName": String,
+  "year": String,
+  "dept": String,
+  "div": String,
   "phoneNumber": String,
   "emailID": String,
-      }
+}
   
 );
 
-const orderModel = new mongoose.model("residents", orderSchema);
+const orderModel = new mongoose.model("students", orderSchema);
 
 exports.order = orderModel;

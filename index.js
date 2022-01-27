@@ -14,7 +14,7 @@ var cors = require("cors");
 app.use(cors());
 
 
-app.route("/resident")
+app.route("/student")
     .get(async (req, res) => {
         let data = await detail.find();
         console.log(await detail);
@@ -32,7 +32,7 @@ app.route("/resident")
     })
     .put(async (req, res) => {
         console.log(req.body);
-        let s = await detail.updateOne({"flatNo": req.body.flatNumber}, { "$set": {"firstName":req.body.firstName,"lastName":req.body.lastName, "phoneNumber":req.body.phoneNumber, "emailID": req.body.emailAddress}})
+        let s = await detail.updateOne({"rollNumber": req.body.rollNumber}, { "$set": {"firstName":req.body.firstName,"lastName":req.body.lastName, "year":req.body.year, "dept":req.body.dept, "div":req.body.div, "phoneNumber":req.body.phoneNumber, "emailID": req.body.emailAddress}})
         res.send(s);
         
 
@@ -49,7 +49,7 @@ app.route("/resident")
 	})
 	
 	
-	app.get("/resident/:id", async (req, res) => {
+	app.get("/student/:id", async (req, res) => {
 	console.log(req.params.id);
 	let data = await detail.find({"_id": req.params.id});
 	res.send(data[0]);
