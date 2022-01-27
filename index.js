@@ -14,7 +14,7 @@ var cors = require("cors");
 app.use(cors());
 
 
-app.route("/student")
+app.route("/students")
     .get(async (req, res) => {
         let data = await detail.find();
         console.log(await detail);
@@ -49,7 +49,7 @@ app.route("/student")
 	})
 	
 	
-	app.get("/student/:id", async (req, res) => {
+	app.get("/students/:id", async (req, res) => {
 	console.log(req.params.id);
 	let data = await detail.find({"_id": req.params.id});
 	res.send(data[0]);
